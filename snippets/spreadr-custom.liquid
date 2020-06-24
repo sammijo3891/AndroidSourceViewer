@@ -96,7 +96,10 @@
 
 {% else %}
 
-  {% assign spreadr_redirect_url = product.metafields.global["spreadr-url"] | append: "?tag=" | append: spreadr_region_tag %}
+    {% assign spreadr_url = "https://www.amazon." | append : product.metafields.global["spreadr-region"]  | append : "/dp/" | append : product.metafields.global["spreadr-asin"] %}
+
+    {% assign spreadr_redirect_url = spreadr_url | append: "?tag=" | append: spreadr_region_tag %}
+
 
 {% endif %}
 
